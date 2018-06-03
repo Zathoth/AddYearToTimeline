@@ -1,0 +1,8 @@
+{
+	"Name": "AddYearToTimeline",
+	"Author": "Zathoth",
+	"Website": "https://github.com/Zathoth/AddYearToTimeline",
+
+	"DLL": "AddYearToTimeline.dll",
+	"DLLEntryPoint": "AddYearToTimeline.Control.Start",
+}
