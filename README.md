@@ -24,6 +24,9 @@ With the terran format, the date use a standard format displaying the month and 
 ** Warning: Uses the experimental BTML mod loader and ModTek that might change, come here again to check for updates **
 * Install [BattleTechModLoader](https://github.com/Mpstark/BattleTechModLoader/releases) using the [instructions here](https://github.com/Mpstark/BattleTechModLoader)
 * Install [ModTek](https://github.com/Mpstark/ModTek/releases) using the [instructions here](https://github.com/Mpstark/ModTek/tree/master/ModTek)
+## Installation
+Extract/Copy the AddYearToTimeline folder to the mods directory of Battletech.
+If you do not have a mods folder in the Battletech folder, please refer to the requirements installations first for details.
 ## Special Thanks
 This mod would not be possible without all tools and mods provided for the community by the following persons. Special thanks to:
 * [Pardeike](https://github.com/pardeike) for **Harmony**.
