@@ -1,7 +1,6 @@
-
 # AddYearToTimeline
 This mod adds the year to the date in the game timeline message and the event window.
-The default year is 3025, but it can be change to any year in the mod settings.
+The default year is 3025, but it can be changed to any year in the mod settings.
 ## Gameplay changes
 * Adds the year to the date in the timeline message.
 * Adds the year to the date in the event window.

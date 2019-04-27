@@ -1,11 +1,9 @@
-﻿using System;
-using System.Globalization;
-using System.Collections.Generic;
-using System.Reflection;
-using BattleTech;
+﻿using BattleTech;
 using BattleTech.UI;
-using DG.Tweening;
 using Harmony;
+using System;
+using System.Globalization;
+using System.Reflection;
 using TMPro;
 
 namespace AddYearToTimeline
@@ -53,11 +51,6 @@ namespace AddYearToTimeline
         [HarmonyPatch(typeof(SGTimePlayPause), "SetDay")]
         public static class SetDaySGTimePlayPauseBattleTechPatch
         {
-            //public static void Prefix()
-            //{
-            //    return;
-            //}
-
             public static void Postfix(SGTimePlayPause __instance, int daysPassed)
             {
                 try
@@ -65,22 +58,6 @@ namespace AddYearToTimeline
                     string message = GetTimelineDate(daysPassed);
                     TextMeshProUGUI timePassedText = (TextMeshProUGUI)ReflectionHelper.GetPrivateField(__instance, "timePassedText");
                     timePassedText.text = message;
-
-                    WwiseManager.PostEvent<AudioEventList_ui>(AudioEventList_ui.ui_sim_travel_ping_play, WwiseManager.GlobalAudioObject, null, null);
-                    int day = daysPassed % 7 + 1;
-                    for (int i = 0; i < 7; i++)
-                    {
-                        List<DOTweenAnimation> DayPips = (List<DOTweenAnimation>)ReflectionHelper.GetPrivateField(__instance, "DayPips");
-                        if (i < day)
-                        {
-                            DayPips[i].DOPlayForwardById("fadeIn");
-                        }
-                        else
-                        {
-                            DayPips[i].DOPlayBackwardsById("fadeIn");
-                        }
-                    }
-                    __instance.CheckForLaunchVisbility();
                 }
                 catch (Exception e)
                 {
