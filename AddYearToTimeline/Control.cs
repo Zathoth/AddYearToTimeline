@@ -1,5 +1,6 @@
 ﻿using BattleTech;
 using BattleTech.UI;
+using BattleTech.UI.TMProWrapper;
 using Harmony;
 using System;
 using System.Globalization;
@@ -39,8 +40,8 @@ namespace AddYearToTimeline
                 {
                     int daysPassed = UnityGameInstance.BattleTechGame.Simulation.DaysPassed;
                     string message = GetTimelineDate(daysPassed);
-                    TextMeshProUGUI timePassedText = (TextMeshProUGUI)ReflectionHelper.GetPrivateField(__instance, "eventTime");
-                    timePassedText.text = message;
+                    LocalizableText eventTime = (LocalizableText)ReflectionHelper.GetPrivateField(__instance, "eventTime");
+                    eventTime.SetText(message);
                 }
                 catch (Exception e)
                 {
@@ -56,7 +57,7 @@ namespace AddYearToTimeline
                 try
                 {
                     string message = GetTimelineDate(daysPassed);
-                    TextMeshProUGUI timePassedText = (TextMeshProUGUI)ReflectionHelper.GetPrivateField(__instance, "timePassedText");
+                    LocalizableText timePassedText = (LocalizableText)ReflectionHelper.GetPrivateField(__instance, "timePassedText");
                     timePassedText.text = message;
                 }
                 catch (Exception e)

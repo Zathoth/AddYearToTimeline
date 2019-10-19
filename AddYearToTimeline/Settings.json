@@ -2,5 +2,6 @@
 	"UseTerranTime": false,
 	"UseHBSFormat": true,
 	"StartingYear": 3025,
-    "WeeksPerYear": 52
+    "WeeksPerYear": 52,
+	"Logging": false
 }
